@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeDerNow</title>
+    <link rel="shortcut icon" href="assets/Wedernow.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>WeDerNow</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./" class="active">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="home-hero">
+      <div class="hero-content">
+        <h1>Check Weather Instantly</h1>
+        <p>
+          Welcome to <strong>WeDerNow</strong> — your one-stop platform for
+          real-time weather updates, forecasts, and more. Stay informed wherever
+          you go!
+        </p>
+        <a href="#weather-card" class="hero-btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- card -->
+    <div class="container" id="weather-card">
+      <div class="card">
+        <h1 class="logo">🌥️ WeatherNow</h1>
+        <div class="search-section">
+          <input type="search" id="city-input" placeholder="Search city..." />
+          <button id="get-weather-btn"><i class="fa fa-search"></i></button>
+        </div>
+        <div id="weather-info">
+          <!-- temperature box -->
+          <div class="temp-box">
+            <p id="city-text">Your City</p>
+            <div class="temp-part">
+              <img id="weatherIcon" src="./assets/cloud.png" />
+              <p id="temperature">
+                24&deg;C<br /><span id="feels-like">Feels Like 26&deg;C</span>
+              </p>
+            </div>
+            <p id="weather">scattered clouds</p>
+            <div class="weather-details">
+              <p id="humidity">Humidity<br /><span>56</span></p>
+              <p id="min-temp">Minimum<br /><span>24&deg;C</span></p>
+              <p id="max-temp">Maximum<br /><span>29&deg;C</span></p>
+            </div>
+          </div>
+          <div class="recentCities">
+            <ul id="recent-cities"></ul>
+          </div>
+          <div class="toggle-section">
+            <div class="toggle">
+              <input type="checkbox" id="unit-toggle" />
+              <label for="unit-toggle" class="slider"></label>
+            </div>
+            <span class="unit-label"></span>
+          </div>
+        </div>
+        <!-- erroe message -->
+        <p class="hidden" id="error-message">
+          City Not Found!<br />
+          <span style="opacity: 0.7; font-weight: 400"
+            >Please check if the city name is correct.</span
+          >
+        </p>
+        <p id="quote">Fetching real time weather...</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="home-footer">
+      <p>
+        Made with ❤️ by <strong>HARSHIT PANT</strong> | All Rights Reserved ©
+        2025
+      </p>
+      <div class="footer-socials">
+        <a
+          href="https://www.linkedin.com/in/harshit-pant-310587236/"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/Harshitpant12" title="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
