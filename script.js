@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById("error-message")
     const recentCitiesList = document.getElementById("recent-cities")
 
-    const API_KEY = "7187e875009ca7c019001dc35f322ce4"; //env variables
+    const API_KEY = process.env.API_KEY; //env variables
 
     //unit toggle elements
     const unitToggle = document.getElementById("unit-toggle")
