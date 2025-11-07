@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cityNameDisplay = document.getElementById("city-text")
     const weatherIcon = document.getElementById("weatherIcon")
     const temperatureDisplay = document.getElementById("temperature")
-    // const feelsLikeDisplay = document.getElementById("feels-like").innerText //this will be shown in temperature itself
     const weatherDisplay = document.getElementById("weather")
     const displayHumidity = document.getElementById("humidity")
     const minTempDisplay = document.getElementById("min-temp")
