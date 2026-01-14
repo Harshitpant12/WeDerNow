@@ -59,11 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchWeatherByCoords(lat, lon) {
         //get weather data through serverless API
         const url = `/api/weather?lat=${lat}&lon=${lon}`
-        throw new Error("Unable to fetch weather from location")
+        const response = await fetch(url)
+        if (!response.ok) {
+            throw new Error("Unable to fetch weather from location")
+        }
+        const data = await response.json()
+        return data
     }
-    const data = await response.json()
-    return data
-}
 
     function displayWeatherData(data) {
         console.log(data); //remove later if not required
@@ -175,20 +177,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //--- get location weather automatically on load ---
     if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-        const { latitude, longitude } = position.coords
-        try {
-            const locationWeather = await fetchWeatherByCoords(latitude, longitude)
-            lastWeatherData = locationWeather //store for toggle use
-            displayWeatherData(locationWeather)
-        } catch (error) {
-            console.log("Error fetching weather from location", error)
-        }
-    }, (error) => {
-        console.log("Location access denied or unavailable", error)
-    })
-} else {
-    console.log("Geolocation not supported in this browser")
-}
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const { latitude, longitude } = position.coords
+            try {
+                const locationWeather = await fetchWeatherByCoords(latitude, longitude)
+                lastWeatherData = locationWeather //store for toggle use
+                displayWeatherData(locationWeather)
+            } catch (error) {
+                console.log("Error fetching weather from location", error)
+            }
+        }, (error) => {
+            console.log("Location access denied or unavailable", error)
+        })
+    } else {
+        console.log("Geolocation not supported in this browser")
+    }
 
 })
