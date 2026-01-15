@@ -122,4 +122,21 @@
       <p>Thank you for visiting <strong>WeDerNow</strong> ☀️</p>
     </section>
   </body>
+
+  <script>
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.getElementById("mobileLinks");
+
+    mobileMenu.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+      mobileLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-mobile-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        mobileLinks.classList.remove("active");
+      });
+    });
+  </script>
 </html>
