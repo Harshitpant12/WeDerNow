@@ -530,12 +530,55 @@ img{
 #name::placeholder, #email::placeholder, #message::placeholder{
     color: #fff;
 }
-/* =========================
-   Responsive Mobile / Tablet Menu
-========================= */
+/* Responsive Mobile and Tablet Menu*/
+
+@media (max-width: 480px){
+  .card{
+    width: 75%;
+  }
+  .logo h1{
+    font-size: 1.5rem;
+  }
+  .search-section input[type="search"]{
+    width: 175px;
+    font-size: 16px;
+  }
+  .temp-box{
+    width: 220px;
+    height: 220px;
+  }
+  #city-text{
+    font-size: 20px;
+  }
+  .temp-part{
+    gap: 15px;
+  }
+  #weatherIcon{
+    width: 70px;
+    height: 70px;
+  }
+  #temperature{
+    font-size: 28px;
+  }
+  #weather{
+    font-size: 14px;
+  }
+  .weather-details p{
+    font-size: 12px;
+  }
+  #recent-cities{
+    font-size: 9px;
+  }
+  #quote{
+    font-size: 14px;
+  }
+  .hidden{
+    font-size: 14px;
+  }
+
+}
 
 @media (max-width: 768px) {
-
   .nav-links {
     display: none;
   }
