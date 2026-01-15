@@ -647,3 +647,20 @@ img{
     width: 85%;
   }
 }
+
+/* contact section's responsive fix */
+@media (max-width:480px){
+  .contact-form, .contact-info{
+    padding: 20px;
+  }
+  .contact-form h2, .contact-info h2{
+    font-size: 1.1rem;
+  }
+  .form-group input, .form-group textarea{
+    font-size: 14px;
+  }
+  .btn-submit{
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
