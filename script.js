@@ -1,4 +1,3 @@
-// import dotenv from "dotenv";
 import { countryNames } from "./country-names.js";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxTempDisplay = document.getElementById("max-temp")
     const errorMessage = document.getElementById("error-message")
     const recentCitiesList = document.getElementById("recent-cities")
+    const mobileMenu = document.getElementById("mobileMenu")
+    const mobileLinks = document.getElementById("mobileLinks")
+
+    mobileMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+        mobileLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-mobile-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            mobileLinks.classList.remove("active");
+        });
+    });
 
     //unit toggle elements
     const unitToggle = document.getElementById("unit-toggle")
